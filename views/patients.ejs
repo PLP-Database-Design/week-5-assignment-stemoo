@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patients</title>
+    <style>
+        *{
+            font-family: "Poppins", sans-serif;
+        }
+        body{
+            min-height: 100vh;
+            background-image: url(bg.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+        .view{
+            display: flex;
+            justify-content: space-evenly;
+            width: auto;
+            height: 100%;
+            overflow: auto;
+            overflow-wrap: anywhere;
+            border: 2px solid slateblue;
+            border-radius: 40px;
+            padding: 40px 0px;
+        }
+        .result{
+            border: 2px solid seagreen;
+        }
+        p{
+            font-size: large;
+            text-decoration: underline;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form action="#" class="view">
+            <div>
+                <p>List of all Patients. Sorted by Patient ID, First Name, Last Name, DOB</p>
+                <table class="result">
+                    <thead>
+                        <tr>
+                            <th class="result"> Patient ID </th>
+                            <th class="result"> First Name </th>
+                            <th class="result"> Last Name </th>
+                            <th class="result"> Date of Birth </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% results.forEach(row =>{%>
+                            <tr>
+                                <td class="result"> <%= row.patient_id %> </td>
+                                <td class="result"> <%= row.first_name %> </td>
+                                <td class="result"> <%= row.last_name %> </td>
+                                <td class="result"> <%= row.date_of_birth %> </td>
+                            </tr>
+                        <%});%>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div>
+                <p>List of all Patients. Sorted by First Name</p>
+                <table class="result">
+                    <thead>
+                        <tr>
+                            <th class="result"> First Name </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% results.forEach(row =>{%>
+                            <tr>
+                                <td class="result"> <%= row.first_name %> </td>
+                            </tr>
+                        <%});%>
+                    </tbody>
+                </table>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
